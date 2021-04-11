@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>Home - Brand</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='poster/bootstrap/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+
+<link rel="stylesheet" href="./static/drop/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="./static/drop/css/Navbar-Dropdown-List-Item.css">
+<link rel="stylesheet" href="./static/drop/css/styles.css">
+<style>
+      .predict{
+          text-align: center;
+          color: rgb(33,37,41);
+          font-weight: bold;
+          font-size: 30px;
+      }
+</style>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark navbar-custom">
+        <div class="container"><a class="navbar-brand" href="#">Job website&nbsp;</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+<!--                    <li class="nav-item"><a class="nav-link" href="/home">Job Prediction</a></li>-->
+<!--                    <li class="nav-item"><a class="nav-link" href="/recommend">Recommend Jobs</a></li>-->
+<!--                    <li class="nav-item"><a class="nav-link" href="#">{{ user_name }}</a></li>-->
+<!--                    <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>-->
+
+ <div class="dropdown menu_links"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button">Welcome {{ user_name }}</button>
+        <div class="dropdown-menu"><a class="dropdown-item" href="/info">Profile Info</a><a class="dropdown-item" href="/home">Job Prediction</a><a class="dropdown-item" href="/">Home</a><a class="dropdown-item" href="/recommend">Recommend Jobs<br></a><a class="dropdown-item" href="/resume">Upload Resume</a><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></div>
+    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+
+<!--<div class="predict">{{ prediction }}</div>-->
+
+<br>
+<br>
+<br>
+<br>
+<h2 class="predict">Apply For Jobs Here</h2>
+<br>
+
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Location</th>
+    <th>Apply Here</th>
+  </tr>
+  <tr>
+    <td>MGM HOSPITAL</td>
+    <td>Komal CHS Shop No 2 Plot 32 Sector 19 Opp G-Mart Kamothe, Navi Mumbai, Maharash Maharashtra, Taloja, Navi Mumbai, Maharashtra</td>
+    <td><a href="/">Apply</a></td>
+  </tr>
+  <tr>
+    <td>UpGrad</td>
+    <td>Vakil Square, Quest Offices, 5th Floor, Banneraghatta Road, Bengaluru, Karnataka 560029</td>
+    <td><a href="/">Apply</a></td>
+  </tr>
+  <tr>
+    <td>TCS</td>
+    <td>Air-India Building, 11th Floor, Nariman Point, Mumbai, Maharashtra 400021</td>
+    <td><a href="/">Apply</a></td>
+  </tr>
+  <tr>
+    <td>LNT</td>
+    <td>3rd Floor, Plot C-26/27 Bandra-Kurla Complex, Metropolitan, Bandra (E), Mumbai, Maharashtra 400051</td>
+    <td><a href="/">Apply</a></td>
+  </tr>
+  <tr>
+    <td>Delhi Public School</td>
+    <td>Palm Beach Marg, Sector - 52, Nerul, Navi Mumbai, Maharashtra 400706</td>
+    <td><a href="/">Apply</a></td>
+  </tr>
+
+</table>
+
+<script src="./static/poster/js/jquery.min.js"></script>
+<script src="./static/poster/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+</body>
+</html>

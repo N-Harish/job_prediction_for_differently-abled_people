@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Recommender System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='recommend/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='recommend/css/Navigation-Clean.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='recommend/css/NZDropdown-Singlee.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='recommend/css/Registration-Form-with-Photo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='recommend/css/styles.css') }}">
+    <link rel="stylesheet" href="./static/drop/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/drop/css/Navbar-Dropdown-List-Item.css">
+    <link rel="stylesheet" href="./static/drop/css/styles.css">
+    <style>
+        .predict{
+            text-align: center;
+            color: rgb(33,37,41);
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .numlist{
+            color: rgb(33,37,41);
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+    </style>
+</head>
+
+<body>
+<!--    <nav class="navbar navbar-light navbar-expand-md navigation-clean">-->
+<!--        <div class="container"><a class="navbar-brand" href="#">Job Prediction Website</a><button data-toggle="collapse"-->
+<!--                class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span-->
+<!--                    class="navbar-toggler-icon"></span></button>-->
+<!--            <div class="collapse navbar-collapse" id="navcol-1">-->
+<!--                <ul class="navbar-nav ml-auto">-->
+<!--&lt;!&ndash;                    <li class="nav-item"><a class="nav-link" href="/home" style="color: rgb(70,87,101);">Home</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li class="nav-item"><a class="nav-link" href="{{ url_for('recommend') }}">Recommend Jobs</a></li>&ndash;&gt;-->
+<!--                    <li class="nav-item"><a class="nav-link" href="#"></a></li>-->
+<!--                    <li class="nav-item dropdown">-->
+<!--                        <div class="dropdown-menu" aria-expanded="false" data-toggle="dropdown"><a class="dropdown-item"-->
+<!--                                href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a-->
+<!--                                class="dropdown-item" href="#">Third Item</a></div>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--&lt;!&ndash;                <a href="#" style="background: var(&#45;&#45;white);color: #465765;">AI Bot</a>&ndash;&gt;-->
+<!--                <a href="/home" style="background: var(&#45;&#45;white);color: #465765;">Home</a>-->
+<!--            <ul class="navbar-nav">-->
+<!--                <li class="nav-item"></li>-->
+<!--                <li class="nav-item">-->
+<!--&lt;!&ndash;                    <a class="nav-link" href="#">Feedback</a>&ndash;&gt;-->
+<!--                    <a class="nav-link" href="{{ url_for('recommend') }}">Recommend Jobs</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item"></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </nav>-->
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark navbar-custom">
+        <div class="container"><a class="navbar-brand" href="#">Job website&nbsp;</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+<!--                    <li class="nav-item"><a class="nav-link" href="/home"></a></li>-->
+<!--                    <li class="nav-item"><a class="nav-link" href="/recommend"></a></li>-->
+<!--                    <li class="nav-item"><a class="nav-link" href="/poster"></a></li>-->
+<!--&lt;!&ndash;                    <li class="nav-item"><a class="nav-link" href="#">{{ user_name }}</a></li>&ndash;&gt;-->
+<!--                   <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}"></a></li>-->
+
+ <div class="dropdown menu_links"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button">Welcome {{ user_name }}</button>
+        <div class="dropdown-menu"><a class="dropdown-item" href="/info">Profile Info</a><a class="dropdown-item" href="/">Home</a><a class="dropdown-item" href="/home">Job Prediction</a><a class="dropdown-item" href="/resume">Upload Resume</a><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></div>
+    </div>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+<br/>
+<br/>
+<br/>
+
+    <p style="background: var(--gray);color: var(--white);font-size: 22px;">We are here to recommend jobs using salary
+        range and type of your disability. Just select the type of disability and salary range from dropdown given
+        below.</p>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <section class="register-photo" style="color: rgb(67,127,187);background: var(--dark);">
+        <div class="form-container">
+            <div class="image-holder"></div>
+            <form method="post" action="{{ url_for('recommend') }}">
+                <h2 class="text-center"><strong>Job Recommendation</strong></h2>
+                <div class="form-group">
+                    <select name="eligibility" class="form-control"
+                        style="height: 28px;padding-top: 3px;padding-bottom: 3px;font-size: 12px;width: 100%;">
+                        <!--                        <option value="12" selected="">Select / Single</option>-->
+                        <option value="" disabled selected>Select your Eligibility</option>
+                        {% for i in range(0, len_eli) %}
+                            <option value="{{ list_eli[i] }}" selected="">{{ list_eli[i] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group"><select name="salary" class="form-control"
+                        style="height: 28px;padding-top: 3px;padding-bottom: 3px;font-size: 12px;width: 100%;">
+                        <option value="Salary Range" disabled selected>Select Salary Range</option>
+                        {% for i in range(0, len_sal) %}
+                            <option value="{{ list_sal[i] }}" selected="">{{ list_sal[i] }}</option>
+                        {% endfor %}
+                    </select></div>
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">&nbsp;Submit</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <p style="background: var(--gray-dark);"></p>
+        </div>
+    </section>
+    <div>
+
+        {% if prediction %}
+            <div class="predict">
+                Top 5 Jobs Recommended for you
+            </div>
+            <ol class="numlist">
+                {% for i in range(0,5) %}
+                    <li>{{prediction[i]}}</li>
+                {% endfor %}
+            </ol>
+        {% else %}
+            <div></div>
+        {% endif %}
+    </div>
+    <script src="./static/poster/js/jquery.min.js"></script>
+    <script src="./static/poster/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+    (function(d, m){
+        var kommunicateSettings =
+            {"appId":"39f4584e7ffebf544270e1f4f0382d306","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+    </script>
+</body>
+
+</html>

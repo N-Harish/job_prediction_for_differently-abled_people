@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>design</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }} ">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Contact-Form-Clean.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Navigation-Clean.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/NZDropdown-Singlee.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/PHP-Contact-Form-dark-1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/PHP-Contact-Form-dark.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
+
+    <link rel="stylesheet" href="./static/drop/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/drop/css/Navbar-Dropdown-List-Item.css">
+    <link rel="stylesheet" href="./static/drop/css/styles.css">
+
+    <style>
+        .predict{
+            text-align: center;
+            color: rgb(33,37,41);
+            font-weight: bold;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+<!--    <nav class="navbar navbar-light navbar-expand-md navigation-clean">-->
+<!--        <div class="container"><a class="navbar-brand" href="#">Job Prediction Website</a><button data-toggle="collapse"-->
+<!--                class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span-->
+<!--                    class="navbar-toggler-icon"></span></button>-->
+<!--            <div class="collapse navbar-collapse" id="navcol-1">-->
+<!--                <ul class="navbar-nav ml-auto">-->
+<!--                    <li class="nav-item">-->
+<!--&lt;!&ndash;                        <a class="nav-link active" href="/" style="color: rgb(70,87,101);">Home</a>&ndash;&gt;-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--&lt;!&ndash;                        <a class="nav-link" href="/recommend">Recommend Jobs</a>&ndash;&gt;-->
+<!--                    </li>-->
+<!--                    <li class="nav-item"><a class="nav-link" href="#"></a></li>-->
+<!--                    <li class="nav-item dropdown">-->
+<!--                        <div class="dropdown-menu" aria-expanded="false" data-toggle="dropdown"><a class="dropdown-item"-->
+<!--                                href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a-->
+<!--                                class="dropdown-item" href="#">Third Item</a></div>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div><a href="/home" style="background: var(&#45;&#45;white);color: #465765;">Home</a>-->
+<!--            <ul class="navbar-nav">-->
+<!--                <li class="nav-item"></li>-->
+<!--                <li class="nav-item"><a class="nav-link" href="/recommend">Recommend Jobs</a></li>-->
+<!--                <li class="nav-item"></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </nav>-->
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark navbar-custom">
+        <div class="container"><a class="navbar-brand" href="#">Job website&nbsp;</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+<!--                    <li class="nav-item"><a class="nav-link" href="/home">Job Prediction</a></li>-->
+<!--                    <li class="nav-item"><a class="nav-link" href="/recommend">Recommend Jobs</a></li>-->
+<!--                    <li class="nav-item"><a class="nav-link" href="/poster">Home</a></li>-->
+<!--                    <li class="nav-item"><a class="nav-link" href="#">{{ user_name }}</a></li>-->
+<!--                    <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>-->
+
+ <div class="dropdown menu_links"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button">Welcome {{ user_name }}</button>
+        <div class="dropdown-menu"><a class="dropdown-item" href="/info">Profile Info</a><a class="dropdown-item" href="/">Home</a><a class="dropdown-item" href="/recommend">Recommend Jobs<br></a><a class="dropdown-item" href="/resume">Upload Resume</a><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></div>
+    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<br/>
+<br/>
+<br/>
+
+    <div id="contact">
+        <div class="container">
+            <div class="intro">
+                <h2>Job Predictor</h2>
+                <p>We are here to help disable people to find jobs</p>
+            </div>
+            <form id="contact-form" action="{{ url_for('home') }}" method="post">
+                <div class="messages"></div>
+                <div class="controls">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-group"><label for="form_name"
+                                    style="color: white;"><strong><em>Eligibility</em></strong>&nbsp;</label>
+                                <div class="help-block with-errors"></div>
+                            </div><select name="eligibility" class="form-control"
+                                style="height: 28px;padding-top: 3px;padding-bottom: 3px;font-size: 12px;width: 100%;">
+                                {% for i in range(0, leng_eli) %}
+                                    <option value="{{ list_eli[i] }}" selected="">{{ list_eli[i] }}</option>
+                                {% endfor %}
+                            </select>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="help-block with-errors"></div>
+                                    </div><label for="form_name" style="color: white;"><strong><em>Hearing
+                                                Disability</em></strong><br></label>
+                                    <select name='hearing' class="form-control"
+                                        style="height: 28px;padding-top: 3px;padding-bottom: 3px;font-size: 12px;width: 100%;">
+
+                                        <option value="1" selected="">Yes</option>
+                                        <option value="0" selected="">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group"><label for="form_lastname"
+                                    style="color: var(--light);"><strong><em>Salary Range&nbsp;</em></strong></label>
+                                <div class="help-block with-errors"></div>
+                            </div><select name='salary' class="form-control"
+                                style="height: 28px;padding-top: 3px;padding-bottom: 3px;font-size: 12px;width: 100%;">
+                                {% for i in range(0, len_sal) %}
+                                <option value="{{ list_sal[i] }}" selected="">{{ list_sal[i] }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="help-block with-errors"></div>
+                                    </div><label for="form_name" style="color: white;"><strong><em>Learning
+                                                Disability</em></strong></label>
+                                </div>
+                            </div><select name='learning_disability' class="form-control"
+                                style="height: 28px;padding-top: 3px;padding-bottom: 3px;font-size: 12px;width: 100%;">
+                                <option value="1" selected="">Yes</option>
+                                <option value="0" selected="">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="help-block with-errors"></div>
+                        </div><label for="form_email" style="color: var(--light);"><strong><em>Mental Health
+                                    Disability&nbsp;</em></strong></label>
+                        <select name='mental_health' class="form-control"
+                            style="height: 28px;padding-top: 3px;padding-bottom: 3px;font-size: 12px;width: 100%;">
+                            <option value="1" selected="">Yes</option>
+                            <option value="0" selected="">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="help-block with-errors"></div>
+                        </div><label for="form_phone" style="color: var(--light);"><strong><em>Vision
+                                    Disability</em></strong></label>
+                        <select name="vision" class="form-control"
+                            style="height: 28px;padding-top: 3px;padding-bottom: 3px;font-size: 12px;width: 100%;">
+                            <option value="1" selected="">Yes</option>
+                            <option value="0" selected="">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="help-block with-errors"></div>
+                        </div><label for="form_message" style="color: var(--light);"><strong><em>Other Disability
+                                    (Hands/Legs)</em></strong>&nbsp;</label>
+                        <select name="other" class="form-control"
+                            style="height: 28px;padding-top: 3px;padding-bottom: 3px;font-size: 12px;width: 100%;">
+                            <option value="1" selected="">Yes</option>
+                            <option value="0" selected="">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <div></div>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-muted"><br><button class="btn btn-success btn-send" value="Senden"
+                                type="submit">Predict</button></p>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="predict">
+        <a href="/suggestion">
+        {{ prediction }}
+        </a>
+    </div>
+
+
+    <script src="./static/poster/js/jquery.min.js"></script>
+    <script src="./static/poster/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+    (function(d, m){
+        var kommunicateSettings =
+            {"appId":"39f4584e7ffebf544270e1f4f0382d306","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+    </script>
+</body>
+
+</html>

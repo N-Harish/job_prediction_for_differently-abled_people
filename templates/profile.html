@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./static/profile/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/profile/css/Profile-Edit-Form-1.css">
+    <link rel="stylesheet" href="./static/profile/css/Profile-Edit-Form.css">
+    <link rel="stylesheet" href="./static/profile/css/styles.css">
+</head>
+
+<body>
+    <div class="container profile profile-view" id="profile">
+        <div class="row">
+            <div class="col-md-12 alert-col relative">
+                <div class="alert alert-info alert-dismissible absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div>
+            </div>
+        </div>
+        <form action="{{ url_for('profile_up') }}" method="post" >
+            <div class="form-row profile-row">
+                <div class="col-md-4 relative">
+<!--                    <div class="avatar">-->
+<!--                        <div class="avatar-bg center"></div>-->
+<!--                    </div><input class="form-control-file form-control" type="file" name="avatar-file">-->
+                </div>
+                <div class="col-md-8">
+                    <h1>Profile Information</h1>
+                    <hr>
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group"><label>Full Name</label><input class="form-control" type="text" name="fullname"></div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group"><label>Type Of Disability</label><input class="form-control" type="text" name="tod"></div>
+                        </div>
+                    </div>
+                    <div class="form-group"><label>City</label><input class="form-control" type="text" autocomplete="off" required="" name="city"></div>
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group"><label>Phone No.</label><input class="form-control" type="text" name="tel" autocomplete="off" pattern="\d*" required=""></div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group"><label>Zip Code</label><input class="form-control" type="text" name="zip" autocomplete="off" pattern="\d*" required=""></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-row">
+                        <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">SAVE </button><button class="btn btn-danger form-btn" type="reset"><a href="/" style="color: white; text-decoration: None;">CANCEL</a></button></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+<!--&lt;!&ndash;    <script src="./static/profile/js/jquery.min.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;    <script src="./static/profile/bootstrap/js/bootstrap.min.js"></script>&ndash;&gt;-->
+<!-- <script src="./static/profile/js/Profile-Edit-Form.js"></script>-->
+</body>
+
+</html>

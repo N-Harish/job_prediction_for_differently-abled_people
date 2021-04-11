@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='poster/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+
+    <link rel="stylesheet" href="./static/drop/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/drop/css/Navbar-Dropdown-List-Item.css">
+    <link rel="stylesheet" href="./static/drop/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark navbar-custom">
+        <div class="container"><a class="navbar-brand" href="#">Job website&nbsp;</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/home">Job Prediction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/recommend">Recommend Jobs</a></li>
+<!--                    <li class="nav-item"><a class="nav-link" href="#">{{ user_name }}</a></li>-->
+<!--                    <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>-->
+
+<!--                    <div class="dropdown menu_links"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button">Welcome {{ user_name }}</button>-->
+<!--        <div class="dropdown-menu"><a class="dropdown-item" href="/poster">Home</a><a class="dropdown-item" href="/home">Job Prediction</a><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></div>-->
+<!--    </div>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="text-center text-white masthead">
+        <div class="masthead-content">
+            <div class="container">
+                <h1 class="masthead-heading mb-0">Your Dream Job&nbsp;</h1>
+                <h2 class="masthead-subheading mb-0">Lets Find Suitable Job For You</h2>
+            </div>
+        </div>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
+        <div class="bg-circle-3 bg-circle"></div>
+        <div class="bg-circle-4 bg-circle"></div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="rounded-circle img-fluid" src="./static/poster/img/recommend.jpg" ></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4">Recommend  Job..</h2>
+                        <p>We are providing recommendation system in our website which will recommend top 5 jobs suitable for disable people. Jobs are recommended based on the type of disability and preferred salary range.<br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5"><img class="rounded-circle img-fluid" src="./static/poster/img/aibot.jpg"></div>
+                </div>
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5">
+                        <h2 class="display-4">AI BOT!</h2>
+                        <p>We are providing AI chat bot for disable people. This bot can efficiently solve job related queries.       Also using this bot you can apply for your desired job.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="rounded-circle img-fluid" src="./static/poster/img/it.jpg"></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4">Our Services!</h2>
+                        <p>We are here to find&nbsp; jobs that are suitable for you based on your disability and also our website recommends top 5 jobs based on your disability type and salary range.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="py-5 bg-black">
+        <div class="container">
+            <p class="text-center text-white m-0 small"></p>
+        </div>
+    </footer>
+
+    <script src="./static/poster/js/jquery.min.js"></script>
+    <script src="./static/poster/bootstrap/js/bootstrap.min.js"></script>
+
+
+
+     <script type="text/javascript">
+    (function(d, m){
+        var kommunicateSettings =
+            {"appId":"39f4584e7ffebf544270e1f4f0382d306","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login/fonts/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login/css/Google-Style-Login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login/css/Login-Form-Clean.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login/css/Login-Form-Dark.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login/css/Modal-Login-form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login/css/styles.css') }}">
+    <style>
+        .login_text{
+            text-align: center;
+            color: rgb(33,37,41);
+            /* font-weight: bold; */
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myModal">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="h4 modal-title">Login Page</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ url_for('login_up') }}" method="post">
+                        <div class="form-group"><i class="fa fa-star fa-user"></i><input name="username" class="form-control" type="text" placeholder="Username" required="required"></div>
+                        <div class="form-group"><i class="fa fa-star fa-lock"></i><input name="password" class="form-control" type="password" placeholder="Password" required="required"></div>
+                        <div class="form-group"><button class="btn btn-primary btn-block btn-lg" type="submit" value="Login">Login</button></div>
+                    </form>
+                </div>
+                <div class="modal-footer"><a href="/signup">Sign Up</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="login_text">
+        {{ login_fail }}
+    </div>
+
+</body>
+
+</html>
