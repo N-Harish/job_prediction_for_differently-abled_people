@@ -16,3 +16,9 @@
 * Flask web framework
 * Firebase (Pyrebase) authentication and real time database
 * Chatbot for resolving query 24/7 using Dialogflow (google)
+
+## Design
+* The project is divided into model , database, ui modules
+* model contains code to predict job and recommenc jobs
+* database module contains database logic
+* UI is basically a python file app.py which will run the app
